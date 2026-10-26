@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="540" viewBox="0 0 1280 540" role="img" aria-label="The review process: read the spec once for intent, then recompute every number (7 findings), test costs and latencies stated as facts (3), and trace every definition (9); rate severity (4 blocker, 9 high, 6 medium); turn it into 7 questions for the owner and a phased plan">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#55DFBD" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#55DFBD"/></marker>
+    <marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#FB8176"/></marker>
+  </defs>
+  <rect width="1280" height="540" rx="20" fill="#071B2B"/>
+  <rect width="1280" height="540" rx="20" fill="url(#grid)"/>
+
+  <g font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+    <text x="40" y="52" font-size="26" font-weight="700" fill="#F4F7F5">How the spec was reviewed</text>
+    <text x="40" y="80" font-size="15" fill="#ABC0C8">Six steps, zero code. The numbers on the boxes are the findings each step produced in this case.</text>
+
+    <g fill="none" stroke-width="2.5">
+      <path d="M200 290H232" stroke="#55DFBD" marker-end="url(#a)"/>
+      <path d="M412 290H432V165H458" stroke="#55DFBD" marker-end="url(#a)"/>
+      <path d="M412 290H458" stroke="#55DFBD" marker-end="url(#a)"/>
+      <path d="M412 290H432V415H458" stroke="#55DFBD" marker-end="url(#a)"/>
+      <path d="M760 165H780V290H806" stroke="#55DFBD" marker-end="url(#a)"/>
+      <path d="M760 290H806" stroke="#55DFBD" marker-end="url(#a)"/>
+      <path d="M760 415H780V290H806" stroke="#55DFBD" marker-end="url(#a)"/>
+      <path d="M1006 290H1038" stroke="#55DFBD" marker-end="url(#a)"/>
+      <path d="M1140 360V438" stroke="#FB8176" marker-end="url(#c)"/>
+    </g>
+
+    <rect x="40" y="235" width="160" height="110" rx="12" fill="#0D2638" stroke="#214456"/>
+    <text x="58" y="272" font-size="17" font-weight="700" fill="#F4F7F5">The spec</text>
+    <text x="58" y="298" font-size="13" fill="#ABC0C8">architecture, KPIs,</text>
+    <text x="58" y="316" font-size="13" fill="#ABC0C8">schema, prompts,</text>
+    <text x="58" y="334" font-size="13" fill="#ABC0C8">UI mock, QA plan</text>
+
+    <rect x="236" y="235" width="176" height="110" rx="12" fill="#0D2638" stroke="#214456"/>
+    <text x="254" y="268" font-size="13" font-family="Menlo,Consolas,monospace" fill="#55DFBD">1</text>
+    <text x="272" y="268" font-size="17" font-weight="700" fill="#F4F7F5">Read once</text>
+    <text x="254" y="294" font-size="13" fill="#ABC0C8">what it does in 5 lines;</text>
+    <text x="254" y="312" font-size="13" fill="#ABC0C8">where it came from</text>
+    <text x="254" y="332" font-size="13" fill="#FFC56E">! looks like a demo copy</text>
+
+    <rect x="462" y="120" width="298" height="90" rx="12" fill="#0D2638" stroke="#214456"/>
+    <text x="480" y="150" font-size="13" font-family="Menlo,Consolas,monospace" fill="#55DFBD">2</text>
+    <text x="498" y="150" font-size="17" font-weight="700" fill="#F4F7F5">Recompute every number</text>
+    <text x="480" y="174" font-size="13" fill="#ABC0C8">sums, percentages, dates, units</text>
+    <text x="480" y="196" font-size="14" font-weight="700" fill="#FB8176">✗ 7 findings · F01–F07</text>
+
+    <rect x="462" y="245" width="298" height="90" rx="12" fill="#0D2638" stroke="#214456"/>
+    <text x="480" y="275" font-size="13" font-family="Menlo,Consolas,monospace" fill="#55DFBD">3</text>
+    <text x="498" y="275" font-size="17" font-weight="700" fill="#F4F7F5">Question "facts"</text>
+    <text x="480" y="299" font-size="13" fill="#ABC0C8">costs, latencies, acceptance tests</text>
+    <text x="480" y="321" font-size="14" font-weight="700" fill="#FB8176">✗ 3 findings · F08–F10</text>
+
+    <rect x="462" y="370" width="298" height="90" rx="12" fill="#0D2638" stroke="#214456"/>
+    <text x="480" y="400" font-size="13" font-family="Menlo,Consolas,monospace" fill="#55DFBD">4</text>
+    <text x="498" y="400" font-size="17" font-weight="700" fill="#F4F7F5">Trace every definition</text>
+    <text x="480" y="424" font-size="13" fill="#ABC0C8">formulas, vendors, data, schema, terms</text>
+    <text x="480" y="446" font-size="14" font-weight="700" fill="#FB8176">✗ 9 findings · F11–F19</text>
+
+    <rect x="810" y="215" width="196" height="150" rx="12" fill="#0D2638" stroke="#214456"/>
+    <text x="828" y="248" font-size="13" font-family="Menlo,Consolas,monospace" fill="#55DFBD">5</text>
+    <text x="846" y="248" font-size="17" font-weight="700" fill="#F4F7F5">Rate severity</text>
+    <text x="828" y="280" font-size="14" fill="#FB8176">✗ <tspan fill="#F4F7F5">4 Blocker</tspan></text>
+    <text x="828" y="306" font-size="14" fill="#FFC56E">! <tspan fill="#F4F7F5">9 High</tspan></text>
+    <text x="828" y="332" font-size="14" fill="#FFC56E">! <tspan fill="#F4F7F5">6 Medium</tspan></text>
+    <text x="828" y="354" font-size="12" fill="#8FA6B0">19 in total</text>
+
+    <rect x="1042" y="215" width="198" height="145" rx="12" fill="#0D2638" stroke="#214456"/>
+    <text x="1060" y="248" font-size="13" font-family="Menlo,Consolas,monospace" fill="#55DFBD">6</text>
+    <text x="1078" y="248" font-size="17" font-weight="700" fill="#F4F7F5">Decide</text>
+    <text x="1060" y="276" font-size="13" fill="#ABC0C8">7 questions for</text>
+    <text x="1060" y="294" font-size="13" fill="#ABC0C8">the owner</text>
+    <text x="1060" y="318" font-size="13" fill="#ABC0C8">plan P0 → P4,</text>
+    <text x="1060" y="336" font-size="13" fill="#ABC0C8">a gate per phase</text>
+
+    <rect x="1042" y="442" width="198" height="62" rx="12" fill="#0D2638" stroke="#FB8176"/>
+    <text x="1060" y="468" font-size="14" font-weight="700" fill="#FB8176">✗ Build it as written</text>
+    <text x="1060" y="490" font-size="13" fill="#ABC0C8">not before P0 answers</text>
+
+    <text x="40" y="504" font-size="13" fill="#8FA6B0">Every finding records: what the spec said · why it is a problem · how it was detected · severity · decision or question.</text>
+  </g>
+</svg>

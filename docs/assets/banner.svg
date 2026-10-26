@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-label="spec-review-case-study · how a QA reviews a technical spec before anyone builds it: 19 findings">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#55DFBD" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <clipPath id="r"><rect width="1280" height="320" rx="20"/></clipPath>
+  </defs>
+  <g clip-path="url(#r)">
+    <rect width="1280" height="320" fill="#071B2B"/>
+    <rect width="1280" height="320" fill="url(#grid)"/>
+    <rect x="0" y="0" width="8" height="320" fill="#55DFBD"/>
+  </g>
+  <g font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+    <text x="64" y="116" font-size="44" font-weight="700" fill="#F4F7F5">spec-review-case-study</text>
+    <text x="66" y="162" font-size="22" fill="#F4F7F5">How a QA reviews a spec before anyone builds:</text>
+    <text x="66" y="194" font-size="22" fill="#ABC0C8">19 findings, from numbers that do not add up</text>
+    <text x="66" y="226" font-size="22" fill="#ABC0C8">to rules nobody could test.</text>
+    <text x="66" y="276" font-size="15" font-weight="600" fill="#55DFBD">Cristian Guerra · QA · Medellín</text>
+  </g>
+  <rect x="680" y="56" width="560" height="208" rx="16" fill="#0D2638" stroke="#214456"/>
+  <circle cx="704" cy="80" r="5" fill="#214456"/><circle cx="722" cy="80" r="5" fill="#214456"/><circle cx="740" cy="80" r="5" fill="#214456"/>
+  <g font-family="Menlo,Consolas,monospace" font-size="15">
+    <text x="704" y="120" fill="#F4F7F5">$ python3 check_numbers.py</text>
+    <text x="704" y="150" fill="#FB8176">✗ F04 <tspan fill="#F4F7F5">escalated: 31 (KPI) / 2 (bar) / 2 (panel)</tspan></text>
+    <text x="704" y="176" fill="#FB8176">✗ F05 <tspan fill="#F4F7F5">12 of 14 competitors listed, sum 1517</tspan></text>
+    <text x="704" y="202" fill="#FB8176">✗ F06 <tspan fill="#F4F7F5">'weekly' window 20 Aug - 27 Sep = 38 days</tspan></text>
+    <text x="704" y="236" fill="#FFC56E">6 contradictions, 2 unexplained, 0 ok</text>
+  </g>
+</svg>
