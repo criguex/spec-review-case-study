@@ -82,7 +82,7 @@ python3 check_numbers.py
 ```
 
 ```text
-! F01  1334 + 1158 = 2492 raw, 2070 unique: 422 duplicates (16.9%), all of them web (36.4% of web), none social
+! F01  1334 + 1158 = 2492 raw, 2070 unique: 422 duplicates (16.9%): 422 web (36.4% of web), 0 social (0.0% of social)
 ✗ F02  1753 threats = 84.7% of signals, but 67% noise leaves at most 683 non-noise
 ✗ F03  noise KPI 67% vs 'ignore' label 4% in the taxonomy
 ✗ F04  escalated: 31 (KPI) / 2 (bar) / 2 (panel); brief promises 3 actions, shows 2
@@ -101,7 +101,7 @@ The checker has its own tests, so a bug in it cannot pass silently: `python3 -m 
 
 ## Reuse it
 
-**[docs/checklist.md](docs/checklist.md)** is the checklist distilled from this review: 26 checks in six blocks, each tagged with the finding that made it necessary. Paste it into the ticket before anyone writes code.
+**[docs/checklist.md](docs/checklist.md)** is the checklist distilled from this review: 26 checks in seven blocks (0 to 6), each tagged with the finding that made it necessary. Paste it into the ticket before anyone writes code.
 
 ## Limits
 

@@ -82,7 +82,7 @@ python3 check_numbers.py
 ```
 
 ```text
-! F01  1334 + 1158 = 2492 raw, 2070 unique: 422 duplicates (16.9%), all of them web (36.4% of web), none social
+! F01  1334 + 1158 = 2492 raw, 2070 unique: 422 duplicates (16.9%): 422 web (36.4% of web), 0 social (0.0% of social)
 ✗ F02  1753 threats = 84.7% of signals, but 67% noise leaves at most 683 non-noise
 ✗ F03  noise KPI 67% vs 'ignore' label 4% in the taxonomy
 ✗ F04  escalated: 31 (KPI) / 2 (bar) / 2 (panel); brief promises 3 actions, shows 2
@@ -101,7 +101,7 @@ El verificador tiene sus propias pruebas, para que un error suyo no pase en sile
 
 ## Reutilízala
 
-**[docs/checklist.es.md](docs/checklist.es.md)** es la checklist que dejó esta revisión: 26 revisiones en seis bloques, cada una marcada con el hallazgo que la hizo necesaria. Pégala en el ticket antes de que alguien escriba código.
+**[docs/checklist.es.md](docs/checklist.es.md)** es la checklist que dejó esta revisión: 26 revisiones en siete bloques (del 0 al 6), cada una marcada con el hallazgo que la hizo necesaria. Pégala en el ticket antes de que alguien escriba código.
 
 ## Límites
 

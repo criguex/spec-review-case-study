@@ -37,6 +37,12 @@ class EdgeCases(unittest.TestCase):
         for fid in ("F02", "F03", "F04", "F05", "F06"):
             self.assertEqual(result[fid], "✓", fid)
 
+    def test_duplicates_all_from_social_are_flagged(self):
+        self.assertEqual(verdicts(web_shown=1158)["F01"], "!")
+
+    def test_duplicates_split_between_sources_pass(self):
+        self.assertEqual(verdicts(web_shown=947)["F01"], "✓")
+
     def test_assumptions_are_listed(self):
         self.assertEqual(cn.main(["--assumptions"]), 0)
 

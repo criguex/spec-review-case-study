@@ -40,7 +40,13 @@ def checks(spec=SPEC, assume=ASSUMPTIONS):
     dupes = raw - s["unique"]
     web_cut = s["web"] - s["web_shown"]
     social_cut = s["social"] - (s["unique"] - s["web_shown"])
-    yield "F01", "!" if social_cut == 0 and web_cut else "✓", f"{s['social']} + {s['web']} = {raw} raw, {s['unique']} unique: {dupes} duplicates ({share(dupes, raw)}), all of them web ({share(web_cut, s['web'])} of web), none social"
+    if web_cut < 0 or social_cut < 0 or web_cut + social_cut != dupes:
+        f01 = "✗"
+    elif dupes and (web_cut == 0 or social_cut == 0):
+        f01 = "!"
+    else:
+        f01 = "✓"
+    yield "F01", f01, f"{s['social']} + {s['web']} = {raw} raw, {s['unique']} unique: {dupes} duplicates ({share(dupes, raw)}): {web_cut} web ({share(web_cut, s['web'])} of web), {social_cut} social ({share(social_cut, s['social'])} of social)"
 
     not_noise_max = round(s["unique"] * (1 - s["noise"]))
     yield "F02", mark(s["threats"] <= not_noise_max), f"{s['threats']} threats = {share(s['threats'], s['unique'])} of signals, but {s['noise']:.0%} noise leaves at most {not_noise_max} non-noise"
