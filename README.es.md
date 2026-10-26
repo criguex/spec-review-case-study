@@ -11,7 +11,7 @@ Antes de hacer una torta, lees toda la receta. Si en la página 1 dice 3 huevos 
 - Imagina que el dueño de una tienda pide un robot que vigile las tiendas rivales cada semana y meta las noticias importantes en una caja de "mira esto" para que una persona las revise.
 - El plan del robot dice que esa caja tiene 31 cosas en una esquina de la pantalla y 2 en otra esquina. También lista 12 tiendas rivales cuyos números suman 1.517, mientras el total de arriba dice 2.070.
 - La revisión sumó cada número y comparó cada lugar donde aparece lo mismo. Encontró 19 problemas como estos y los volvió preguntas cortas para el dueño.
-- Lo que ganamos: cada problema se arregló con una pregunta en papel, antes de que alguien pasara semanas construyendo lo que no era.
+- Lo que ganamos: cada problema quedó identificado, y con una propuesta de arreglo donde se pudo, con una pregunta en papel antes de que alguien pasara semanas construyendo lo que no era. Ninguno está cerrado todavía: 8 tienen propuesta y 11 siguen abiertos (ver la tabla de hallazgos).
 
 ![Animación ilustrada: una receta de torta con 3 huevos en la página 1 y 2 en la página 2, la temperatura del horno en blanco y "hornear 1 semana = 38 días"; una lupa marca cada problema, el cocinero decide preguntar primero y los mismos tres problemas aparecen en la especificación real](docs/assets/explained.es.gif)
 
@@ -86,12 +86,16 @@ python3 check_numbers.py
 ✗ F02  1753 threats = 84.7% of signals, but 67% noise leaves at most 683 non-noise
 ✗ F03  noise KPI 67% vs 'ignore' label 4% in the taxonomy
 ✗ F04  escalated: 31 (KPI) / 2 (bar) / 2 (panel); brief promises 3 actions, shows 2
-✗ F05  12 of 14 competitors listed, sum 1517: 553 signals (27%) unaccounted; graph draws 7
+✗ F05  12 of 14 competitors listed, sum 1517: 553 signals (26.7%) unaccounted; graph draws 7
 ✗ F06  'weekly' window 20 Aug - 27 Sep = 38 days
-✗ F07  'tokens processed' 24,849 counts output only; input ~2,070,000 is 99% of all tokens
-! F08  week spend $0.2087 ~ 2.07M input tokens x $0.1/M = $0.2070: classifier input only
+✗ F07  'tokens processed' 24,849 counts output only; input ~2,070,000 is 98.8% of all tokens
+! F08  week spend $0.2087 vs 2.07M input tokens x $0.1/M = $0.2070: classifier input only; output and brief costs missing
 6 contradictions, 2 unexplained, 0 ok
+assumptions behind F01, F02, F07 and F08: python3 check_numbers.py --assumptions
 ```
+
+El verificador tiene sus propias pruebas, para que un error suyo no pase en silencio: `python3 -m unittest test_check_numbers` cubre gasto cero, un gasto muy por encima del costo, cero señales y un juego de cifras coherentes que debe pasar. `python3 check_numbers.py --assumptions` lista las estimaciones detrás de F01, F02, F07 y F08.
+
 
 `✗` es una contradicción y `!` es un número que puede ser cierto pero no está explicado. El script sale con código 1 mientras quede alguno.
 

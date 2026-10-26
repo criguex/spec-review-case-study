@@ -11,7 +11,7 @@ Before you bake a cake, you read the whole recipe. If page 1 says 3 eggs and pag
 - Imagine a shop owner asks for a robot that watches rival shops every week and puts the important news in a "look at this" box for a person.
 - The plan for that robot says the box has 31 items in one corner of the screen and 2 items in another corner. It also lists 12 rival shops whose numbers add up to 1,517, while the total at the top says 2,070.
 - The review added up every number and compared every place where the same thing appears. It found 19 problems like these and turned them into short questions for the owner.
-- What we gain: each problem was fixed with a question on paper, before anyone spent weeks building the wrong thing.
+- What we gain: each problem was identified, and a fix proposed where possible, with a question on paper before anyone spent weeks building the wrong thing. None is closed yet: 8 have a proposal and 11 are still open (see the findings table).
 
 ![Illustrated animation: a cake recipe with 3 eggs on page 1 and 2 eggs on page 2, a blank oven temperature and "bake for 1 week = 38 days"; a magnifying glass marks each problem, the cook decides to ask first, and the same three problems appear in the real spec](docs/assets/explained.gif)
 
@@ -86,12 +86,16 @@ python3 check_numbers.py
 ✗ F02  1753 threats = 84.7% of signals, but 67% noise leaves at most 683 non-noise
 ✗ F03  noise KPI 67% vs 'ignore' label 4% in the taxonomy
 ✗ F04  escalated: 31 (KPI) / 2 (bar) / 2 (panel); brief promises 3 actions, shows 2
-✗ F05  12 of 14 competitors listed, sum 1517: 553 signals (27%) unaccounted; graph draws 7
+✗ F05  12 of 14 competitors listed, sum 1517: 553 signals (26.7%) unaccounted; graph draws 7
 ✗ F06  'weekly' window 20 Aug - 27 Sep = 38 days
-✗ F07  'tokens processed' 24,849 counts output only; input ~2,070,000 is 99% of all tokens
-! F08  week spend $0.2087 ~ 2.07M input tokens x $0.1/M = $0.2070: classifier input only
+✗ F07  'tokens processed' 24,849 counts output only; input ~2,070,000 is 98.8% of all tokens
+! F08  week spend $0.2087 vs 2.07M input tokens x $0.1/M = $0.2070: classifier input only; output and brief costs missing
 6 contradictions, 2 unexplained, 0 ok
+assumptions behind F01, F02, F07 and F08: python3 check_numbers.py --assumptions
 ```
+
+The checker has its own tests, so a bug in it cannot pass silently: `python3 -m unittest test_check_numbers` covers zero spend, a spend far above cost, no signals at all, and a set of consistent numbers that must pass. `python3 check_numbers.py --assumptions` lists the estimates behind F01, F02, F07 and F08.
+
 
 `✗` is a contradiction, `!` is a number that can be true but is not explained. The script exits with code 1 while any of them remain.
 
